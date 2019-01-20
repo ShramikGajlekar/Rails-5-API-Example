@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: app-assgn-dev
+  pool: 5
+  username: shawn
+  password: root
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: app-assgn-test
+  pool: 5
+  username: shawn
+  password: root
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: app-assgn
+  pool: 5
+  username: shawn
+  password: root
