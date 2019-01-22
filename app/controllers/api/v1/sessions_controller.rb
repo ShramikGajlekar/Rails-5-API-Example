@@ -19,10 +19,6 @@ module Api
 					head(:unauthorized)
 				end
 			end
-			private
-				def user_params
-					params.require(:user).permit(:first_name,:last_name,:bio)
-				end
 		end
 	end
 end

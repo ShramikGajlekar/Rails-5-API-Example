@@ -4,13 +4,10 @@ module Api
 			def show_user_data
 				user = signed_user
 				if user
-					render json: {user_data: user.as_json(only: [:first_name,:last_name,:bio]), addresses: user.addresses}
+					render json: {user_data: user.as_json(only: [:first_name,:last_name,:bio]), addresses: user.addresses, posts: user.posts}
 				else
 					head(:unauthorized)
 				end
-			end
-			def update
-				
 			end
 			private
 				def user_params

@@ -7,7 +7,7 @@ class Address < ApplicationRecord
   def validate_country_content
   	country_arr = ['India', 'US', 'UK', 'Nepal', 'Bhutan', 'Bangladesh']
   	unless country_arr.include? country
-  		errors.add(:country, "countries allowed as input are ['India', 'US', 'UK', 'Nepal', 'Bhutan', 'Bangladesh']")
+  		errors.add(:country, "countries allowed as input are #{country_arr}")
   	end
   end
 

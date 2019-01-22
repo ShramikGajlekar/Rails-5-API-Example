@@ -1,15 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe User do 
-	describe 'validations in User Model' do
-		it 'must consist of first_name, last_name, email and password' do
-			user = User.new
+	describe 'validations in user Model' do
+		let!(:user) {build(:random_user)}
+		it 'ensures presence of first name' do
+			user.first_name = nil
 			expect(user).to_not be_valid
-			user.first_name = 'Shawn'
-			user.last_name = 'Gajlekar'
-			user.email = 'shramikgajlekar@gmail.com'
-			user.password = 123456789
+		end
+		
+		it 'ensures	presence of last name' do
+			user.last_name = nil
+			expect(user).to_not be_valid
+		end			
+
+		it 'ensure presence of email' do
+			user.email = nil
+			expect(user).to_not be_valid
+		end
+
+		it 'ensures if all the fields are correct then user is valid' do
 			expect(user).to be_valid
 		end
+		
 	end
 end
