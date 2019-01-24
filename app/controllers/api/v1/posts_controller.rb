@@ -45,7 +45,7 @@ module Api
 			private
 
 			def post_params
-				post_params.permit(:user_id, :desc, :title)	
+				params.permit(:user_id, :desc, :title)	
 			end
 
 			def set_post
